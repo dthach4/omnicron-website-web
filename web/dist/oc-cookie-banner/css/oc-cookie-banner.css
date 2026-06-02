@@ -1,0 +1,230 @@
+body.oc-cookie-banner-open:not(.oc-cookie-settings-open) #ocCookieBanner {
+  display: flex;
+}
+body.oc-cookie-settings-open #ocCookieSettings {
+  display: flex;
+}
+body:not(.oc-cookie-banner-open):not(.oc-cookie-settings-open) #ocCookieButton {
+  display: block;
+}
+
+#ocCookieBanner {
+  --cookie-banner-background: #ffffff;
+  --cookie-banner-primary: #333333;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 70px;
+  color: var(--cookie-banner-primary);
+  background-color: var(--cookie-banner-background);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 100001;
+  font-size: 14px;
+  line-height: 1.25em;
+}
+
+#ocCookieBanner .cookie-banner-text {
+  order: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 20px;
+}
+
+#ocCookieBanner .cookie-banner-text p {
+  margin-bottom: 0;
+}
+
+#ocCookieBanner .cookie-banner-buttons {
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+#ocCookieBanner .cookie-banner-close-wrapper {
+  order: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: end;
+}
+
+#ocCookieBanner .cookie-banner-close {
+  background-image: url(../imgs/times.png);
+  background-position: center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#ocCookieBanner .cookie-banner-close:hover {
+  opacity: 0.7;
+}
+
+#ocCookieBanner button {
+  border: 1px solid var(--cookie-banner-primary);
+  color: var(--cookie-banner-primary);
+}
+
+#ocCookieSettings {
+  --cookie-settings-background: #ffffff;
+  --cookie-settings-primary: #333333;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100001;
+}
+
+#ocCookieSettings .cookie-settings-modal {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 480px;
+  max-width: 95%;
+  background-color: var(--cookie-settings-background);
+  color: var(--cookie-settings-primary);
+  overflow-y: auto;
+}
+
+#ocCookieSettings .cookie-settings-text,
+#ocCookieSettings .cookie-settings-flags,
+#ocCookieSettings .cookie-settings-buttons {
+  padding: 20px;
+}
+
+#ocCookieSettings .cookie-settings-flags {
+  padding: 0 20px;
+}
+
+#ocCookieSettings .cookie-settings-title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+#ocCookieSettings .cookie-settings-title p {
+  flex-grow: 1;
+}
+
+#ocCookieSettings .oc-consent-id-string {
+  font-weight: bold;
+}
+
+#ocCookieSettings .cookie-settings-top-close {
+  background-image: url(../imgs/times.png);
+  background-size: contain;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#ocCookieSettings .cookie-settings-top-close:hover {
+  opacity: 0.7;
+}
+
+#ocCookieSettings .cookie-settings-flags {
+  flex-grow: 1;
+}
+
+#ocCookieSettings .cookie-settings-flag {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  border: 1px solid var(--cookie-settings-primary);
+  border-radius: 5px;
+  font-weight: inherit;
+}
+
+#ocCookieSettings .cookie-settings-flag:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#ocCookieSettings .cookie-settings-flag-text {
+  padding: 5px 10px;
+}
+
+#ocCookieSettings .cookie-settings-flag-title {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+#ocCookieSettings .cookie-settings-flag-description {
+  margin-left: 10px;
+  line-height: 1.25em;
+}
+
+#ocCookieSettings .cookie-settings-helpers {
+  margin: 0 20px;
+}
+
+#ocCookieSettings .cookie-settings-flag-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-right: 1px solid var(--cookie-settings-primary);
+}
+
+#ocCookieSettings button {
+  border: 1px solid var(--cookie-settings-primary);
+  color: var(--cookie-settings-primary);
+}
+
+#ocCookieBanner button,
+#ocCookieSettings button {
+  background-color: transparent;
+  padding: 5px 10px;
+  line-height: 1.25em;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+#ocCookieBanner button:hover,
+#ocCookieSettings button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#ocCookieButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../imgs/omnicron-cookie-banner-logo.png);
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  z-index: 100001;
+}
+
+@media (max-width: 768px) {
+  #ocCookieBanner {
+    flex-direction: column;
+  }
+  #ocCookieBanner .cookie-banner-close-wrapper {
+    order: 0;
+  }
+}
