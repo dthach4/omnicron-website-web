@@ -8,7 +8,7 @@ The project can be run locally with `jaspr_cli` or inside Docker using the
 provided `Dockerfile`.
 
 It requires the Web API found in
-[dthach4/omnicron-website-api](https://github.com/dthach4/omnicron-website-web)
+[dthach4/omnicron-website-api](https://github.com/dthach4/omnicron-website-api)
 in order to work.
 
 ## Requirements
@@ -22,7 +22,7 @@ The application requires the following environment variables at build time:
 
 | Variable | Description |
 | --- | --- |
-| `API_URL` | The base URL for the [backend API]((https://github.com/dthach4/omnicron-website-web)) |
+| `API_URL` | The base URL for the [backend API]((https://github.com/dthach4/omnicron-website-api)) |
 | `MATOMO_URL` | The base URL for the [Matomo](https://matomo.org/) environment |
 
 ### Without Docker
