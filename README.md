@@ -22,7 +22,7 @@ The application requires the following environment variables at build time:
 
 | Variable | Description |
 | --- | --- |
-| `API_URL` | The base URL for the [backend API]((https://github.com/dthach4/omnicron-website-api)) |
+| `API_URL` | The base URL for the [backend API](https://github.com/dthach4/omnicron-website-api) |
 | `MATOMO_URL` | The base URL for the [Matomo](https://matomo.org/) environment |
 
 ### Without Docker
