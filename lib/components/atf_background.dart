@@ -57,6 +57,7 @@ class _AtfBackgroundState extends State<AtfBackground> {
   final int maxStarsCount = 15;
   final GlobalNodeKey<HTMLDivElement> backgroundElementKey = GlobalNodeKey();
 
+  List<String> imageUrls = [];
   List<AtfBackgroundIcon> icons = [];
   List<AtfBackgroundStar> stars = [];
   double lastUpdate = 0;
@@ -82,14 +83,9 @@ class _AtfBackgroundState extends State<AtfBackground> {
   Future<void> preloadIcons() async {
     await Future.wait(
       component.iconPaths.map((iconPath) async {
-        Completer completer = Completer();
-        HTMLImageElement imageElement = HTMLImageElement()
-          ..src = iconPath
-          ..onload = (() {
-            completer.complete();
-          }).toJS;
-        await completer.future;
-        return imageElement;
+        final Response response = await window.fetch(iconPath.toJS).toDart;
+        final Blob blob = await response.blob().toDart;
+        imageUrls.add(URL.createObjectURL(blob));
       })
     );
   }
@@ -112,7 +108,7 @@ class _AtfBackgroundState extends State<AtfBackground> {
   AtfBackgroundIcon initializeIcon() => .createRandom(
     canvasWidth: canvasWidth,
     canvasHeight: canvasHeight,
-    validImagePaths: component.iconPaths,
+    validImagePaths: imageUrls,
   );
 
   void initializeStars() {
