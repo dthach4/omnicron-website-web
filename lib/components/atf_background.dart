@@ -182,8 +182,8 @@ class _AtfBackgroundState extends State<AtfBackground> {
     key: backgroundElementKey,
     classes: "atf-background",
     [
-      ...icons,
       ...stars,
+      ...icons,
     ],
   );
 }
