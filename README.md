@@ -2,7 +2,7 @@
 
 This repository contains the source code for the
 [Omnicron website](https://omnicron.it/), built with [Dart](https://dart.dev/)
-and the [Jaspr](https://jaspr.dart.dev/) framework.
+and the [Jaspr](https://jaspr.site/) framework.
 
 The project can be run locally with `jaspr_cli` or inside Docker using the
 provided `Dockerfile`.
