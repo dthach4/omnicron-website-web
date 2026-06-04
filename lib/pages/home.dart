@@ -12,14 +12,12 @@ class Home extends StatelessComponent {
   const Home({super.key});
 
   @override
-  Component build(BuildContext context) => const .fragment([
-    main_(classes: "page", [
-      HomeAboveTheFoldSection(),
-      HomeServicesSection(),
-      HomeCompanySection(),
-      HomeContactUsSection(),
-      HomeLegalSection(),
-      CopyrightSection(),
-    ]),
+  Component build(BuildContext context) => const main_(classes: "page", [
+    HomeAboveTheFoldSection(),
+    HomeServicesSection(),
+    HomeCompanySection(),
+    HomeContactUsSection(),
+    HomeLegalSection(),
+    CopyrightSection(),
   ]);
 }
